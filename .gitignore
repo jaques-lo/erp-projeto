@@ -1,0 +1,57 @@
+# Build directories
+build/
+build-*/
+*.qmake.stash
+
+# Qt Creator generated files
+*.pro.user
+*.pro.user.*
+*.qbs.user
+*.qbs.user.*
+*.moc
+moc_*.cpp
+moc_*.h
+qrc_*.cpp
+ui_*.h
+*.qmlc
+*.jsc
+
+# Object files
+*.o
+*.obj
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Qt unit test framework
+*.gcov
+*.gcda
+*.gcno
+
+# Qt-es specific (Symbian)
+*.sis
+
+# Qt Creator Locator
+.qtc_clangd
+
+# Qt Creator CMake
+CMakeLists.txt.user*
+
+# QtCreator Ctags
+.tags
+
+# QtCtreator local settings (do not enable this, keep configs commented)
+# .qtc_clangd
+
+# QtCreator gdb
+qtc-gdbmacros.txt
+
+# Compiled Static libraries
+*.lib
+*.a
+
+# Folders to ignore
+.vs/
+.idea/

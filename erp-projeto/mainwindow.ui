@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>829</width>
-    <height>555</height>
+    <width>841</width>
+    <height>588</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,17 +17,17 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>-250</x>
-      <y>-10</y>
-      <width>1341</width>
-      <height>551</height>
+      <x>-570</x>
+      <y>0</y>
+      <width>1641</width>
+      <height>571</height>
      </rect>
     </property>
     <property name="text">
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="ArquivosDeRecursos.qrc">:/imagens/icones/wallpaper-erp.png</pixmap>
+     <pixmap resource="ArquivosDeRecursos.qrc">:/imagens/logo/images/wallpaper-erp.png</pixmap>
     </property>
    </widget>
   </widget>
@@ -36,7 +36,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>829</width>
+     <width>841</width>
      <height>22</height>
     </rect>
    </property>
@@ -155,7 +155,7 @@
   <action name="actionCaixa">
    <property name="icon">
     <iconset resource="ArquivosDeRecursos.qrc">
-     <normaloff>:/imagens/icones/caixa.png</normaloff>:/imagens/icones/caixa.png</iconset>
+     <normaloff>:/imagens/icones/images/caixa.png</normaloff>:/imagens/icones/images/caixa.png</iconset>
    </property>
    <property name="text">
     <string>Caixa</string>
@@ -164,7 +164,7 @@
   <action name="actionVendas">
    <property name="icon">
     <iconset resource="ArquivosDeRecursos.qrc">
-     <normaloff>:/imagens/icones/vendas.png</normaloff>:/imagens/icones/vendas.png</iconset>
+     <normaloff>:/imagens/icones/images/vendas.png</normaloff>:/imagens/icones/images/vendas.png</iconset>
    </property>
    <property name="text">
     <string>Vendas</string>
