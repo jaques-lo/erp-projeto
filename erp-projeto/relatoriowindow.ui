@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RelatorioWindow</class>
+ <widget class="QWidget" name="RelatorioWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>760</width>
+    <height>520</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Relatórios</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Relatório:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBox">
+       <item>
+        <property name="text">
+         <string>Selecione um relatório...</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Produtos com estoque baixo</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Estoque atual (valores)</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Produtos mais vendidos</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Vendas por forma de pagamento</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Contas a pagar pendentes</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Contas a receber pendentes</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Clientes cadastrados</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_gerar">
+       <property name="text">
+        <string>Gerar</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_exportar">
+       <property name="text">
+        <string>Exportar CSV</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btn_fechar">
+       <property name="text">
+        <string>Fechar</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_titulo">
+     <property name="text">
+      <string>Escolha um relatório e clique em Gerar.</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTableWidget" name="tableWidget"/>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>btn_fechar</sender>
+   <signal>clicked()</signal>
+   <receiver>RelatorioWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>300</x>
+     <y>400</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

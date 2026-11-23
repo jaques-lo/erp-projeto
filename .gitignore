@@ -1,0 +1,23 @@
+# Pasta de build do Qt Creator (shadow build - 50MB de artefatos)
+build-erp-projeto-Desktop-Debug/
+
+# Artefatos de build (caso alguem builde dentro da fonte)
+*.o
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+Makefile*
+.qmake.stash
+.qmake.cache
+
+# Configuracao local do Qt Creator de cada maquina
+*.pro.user*
+
+# Binarios gerados (cuidado: "erp-projeto" sem barra casaria com a PASTA)
+/erp-projeto/erp-projeto
+smoke
+
+# Arquivos temporarios do SQLite (journal/wal do banco)
+*-journal
+*-wal
+*-shm

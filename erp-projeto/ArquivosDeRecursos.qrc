@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/imagens"/>
+    <qresource prefix="/imagens/icones">
+        <file>images/caixa.png</file>
+        <file>images/vendas.png</file>
+    </qresource>
+    <qresource prefix="/imagens/logo">
+        <file>images/wallpaper-erp.png</file>
+        <file>images/wallpaper-2.png</file>
+    </qresource>
+</RCC>
