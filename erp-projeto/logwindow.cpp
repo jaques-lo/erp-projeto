@@ -4,6 +4,7 @@
 #include <QDate>
 #include <QFileDialog>
 #include <QTextStream>
+#include <QStringConverter>
 #include <QMessageBox>
 
 LogWindow::LogWindow(QWidget *parent) :
@@ -93,7 +94,7 @@ void LogWindow::on_pushButton_2_clicked()
     }
 
     QTextStream out(&arquivo);
-    out.setCodec("UTF-8");
+    out.setEncoding(QStringConverter::Utf8);
     //cabecalho
     QStringList cabecalho;
     for (int c = 0; c < ui->tableWidget->columnCount(); ++c)

@@ -3,6 +3,7 @@
 #include <QtSql>
 #include <QFileDialog>
 #include <QTextStream>
+#include <QStringConverter>
 #include <QMessageBox>
 
 RelatorioWindow::RelatorioWindow(QWidget *parent) :
@@ -170,7 +171,7 @@ void RelatorioWindow::on_btn_exportar_clicked()
     }
 
     QTextStream out(&arquivo);
-    out.setCodec("UTF-8");
+    out.setEncoding(QStringConverter::Utf8);
 
     QStringList cabecalho;
     for (int c = 0; c < ui->tableWidget->columnCount(); ++c)

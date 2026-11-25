@@ -88,6 +88,12 @@ RESOURCES += \
 
 # Na primeira vez, copia o banco db_erp para a pasta de build.
 # Sem isso, o programa roda sem o banco e o login não funciona.
+# (o LoginWindow tambem tenta copiar se ainda nao tiver rodado; a copia
+# aqui ainda serve para o caso de ele ser apagado depois da build)
 unix {
     QMAKE_POST_LINK += test -f $$shell_quote($$OUT_PWD/db_erp) || cp $$shell_quote($$PWD/db_erp) $$shell_quote($$OUT_PWD/)
+}
+win32 {
+    # QMAKE_POST_LINK desabilitado: LoginWindow copia o db com QFile (aceita barras "/")
+# QMAKE_POST_LINK += cmd /c copy /Y "$$PWD/db_erp" "$$OUT_PWD/db_erp"
 }

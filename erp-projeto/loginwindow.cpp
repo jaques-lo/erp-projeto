@@ -8,14 +8,27 @@
 #include <QApplication>
 #include <QDateTime>
 #include <QDir>
+#include <QFile>
 
 LoginWindow::LoginWindow(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::LoginWindow)
 {
     ui->setupUi(this);
-    //ela da o caminho relativo do banco de dados, acha onde esta o .exe do projeto
+    //caminho do banco: pasta do .exe (acima, o arquivo db_erp)
     QString end_banco = qApp->applicationDirPath() + "/db_erp";
+    if (!QFile::exists(end_banco)) {
+        //ainda nao esta na pasta de build (ex.: foi apagado ou a copia pelo
+        //qmake nao rodou, como no Windows): copia da pasta do projeto
+        QStringList fontes = {qApp->applicationDirPath() + "/../../db_erp",
+                              qApp->applicationDirPath() + "/../db_erp",
+                              qApp->applicationDirPath() + "/../../../db_erp"};
+        for (const QString &f : fontes)
+            if (QFile::exists(f)) {
+                QFile(f).copy(end_banco);
+                break;
+            }
+    }
 
     bancoDeDados.setDatabaseName(end_banco);
 
@@ -44,10 +57,14 @@ void LoginWindow::on_btn_login_clicked()
     }
 
     QSqlQuery query(bancoDeDados);
-    //aceita o codigo (id) ou o login do usuario
-    if(query.exec("SELECT * FROM tb_usuarios WHERE (id_usuario='" + user +
-                  "' OR login='" + user + "') AND senha='" + code +
-                  "' AND ativo=1")){
+    //aceita o codigo (id) ou o login do usuario; com parametros, para
+    //evitar injeção de SQL com as entradas do usuário
+    query.prepare("SELECT * FROM tb_usuarios WHERE (id_usuario=? OR login=?) "
+                  "AND senha=? AND ativo=1");
+    query.addBindValue(user);
+    query.addBindValue(user);
+    query.addBindValue(code);
+    if(query.exec()){
         if(query.next()){
             //guarda quem esta logado (usado nos logs e nas movimentacoes)
             sessao().id   = query.value("id_usuario").toInt();
