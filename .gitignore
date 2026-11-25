@@ -21,3 +21,8 @@ smoke
 *-journal
 *-wal
 *-shm
+
+# Materiais de apoio (docs, zips, imagens de referencia, backups de banco)
+# Nao sao necessarios para compilar nem rodar o projeto.
+adicionais/
+relatorios/

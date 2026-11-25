@@ -1,5 +1,7 @@
 <RCC>
-    <qresource prefix="/imagens"/>
+    <qresource prefix="/imagens">
+        <file>images/logoBG.png</file>
+    </qresource>
     <qresource prefix="/imagens/icones">
         <file>images/caixa.png</file>
         <file>images/vendas.png</file>
